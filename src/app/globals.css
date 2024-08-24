@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.learner-title {
+    background: rgb(32,18,59);
+    background: linear-gradient(90deg, rgba(32,18,59,1) 0%, rgba(88,45,133,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
