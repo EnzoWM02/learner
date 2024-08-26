@@ -12,18 +12,20 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-14">
+      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-10">
         <span>Registre-se</span>
       </div>
       <div className="flex flex-col gap-5 items-center">
         <Formik
           initialValues={{
+            name: "",
             email: "",
             password: "",
             confirm_password: "",
             birth_date: "",
           }}
           validationSchema={Yup.object({
+            name: Yup.string().required("Nome é obrigatório"),
             email: Yup.string()
               .email("E-mail inválido")
               .required("E-mail é obrigatório"),
@@ -36,15 +38,29 @@ export default function SignUp() {
               "Data de nascimento é obrigatória"
             ),
           })}
-          onSubmit={(values) => {
-            router.push("/sign-in");
+          onSubmit={async (values) => {
+            console.log(values);
+            const res = await fetch("api/user/store", {
+              method: "POST",
+              body: values,
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            console.log(res);
+            // router.push("/sign-in");
           }}
         >
           {() => {
             return (
               <Form className="w-full">
-                <div className="flex flex-col gap-5 ">
+                <div className="flex flex-col sm:gap-5">
                   <div>
+                    <LnInput
+                      name="name"
+                      description="Esse é o seu apelido"
+                      label="Nome"
+                    />
                     <LnInput name="email" type="email" label="E-mail" />
                     <LnInput name="password" type="password" label="Senha" />
                     <LnInput
@@ -54,17 +70,19 @@ export default function SignUp() {
                     />
                     <LnInput name="birth_date" label="Data de nascimento" />
                   </div>
-                  <Button color="default" size="lg" type="submit">
-                    Criar conta
-                  </Button>
+                  <div className="grid grid-cols-2 w-full items-center justify-center">
+                    <Link href="/sign-in" className="text-white font-bold">
+                      Voltar
+                    </Link>
+                    <Button color="default" size="lg" type="submit">
+                      Criar conta
+                    </Button>
+                  </div>
                 </div>
               </Form>
             );
           }}
         </Formik>
-        <Link href="/sign-in" className="text-white font-bold">
-          Voltar
-        </Link>
       </div>
     </>
   );
