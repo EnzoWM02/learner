@@ -9,7 +9,7 @@ import * as Yup from "yup";
 export default function SignIn() {
   return (
     <>
-      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-14 flex-col">
+      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold my-14 flex-col">
         <span>Bem-vindo ao</span>
         <span className="learner-title font-bold">Learner</span>
       </div>

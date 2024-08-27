@@ -12,7 +12,7 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-10">
+      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-5">
         <span>Registre-se</span>
       </div>
       <div className="flex flex-col gap-5 items-center">
@@ -54,7 +54,7 @@ export default function SignUp() {
           {() => {
             return (
               <Form className="w-full">
-                <div className="flex flex-col sm:gap-5">
+                <div className="flex flex-col">
                   <div>
                     <LnInput
                       name="name"
