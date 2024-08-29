@@ -5,11 +5,10 @@ import { Form, Formik } from "formik";
 import Link from "next/link";
 import LnInput from "src/app/components/ui/LnInput";
 import * as Yup from "yup";
-import { useRouter } from "next/navigation";
+import { createUserAction } from "src/app/api/actions/user/createUserAction";
+import handleAction from "src/app/utils/helpers/handleAction";
 
 export default function SignUp() {
-  const router = useRouter();
-
   return (
     <>
       <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-5">
@@ -39,16 +38,8 @@ export default function SignUp() {
             ),
           })}
           onSubmit={async (values) => {
-            console.log(values);
-            const res = await fetch("api/user/store", {
-              method: "POST",
-              body: values,
-              headers: {
-                "Content-Type": "application/json",
-              },
-            });
+            const res = await handleAction(createUserAction(values));
             console.log(res);
-            // router.push("/sign-in");
           }}
         >
           {() => {
