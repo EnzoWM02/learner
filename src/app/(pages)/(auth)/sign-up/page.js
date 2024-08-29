@@ -3,10 +3,12 @@
 import { Button } from "@nextui-org/button";
 import { Form, Formik } from "formik";
 import Link from "next/link";
-import LnInput from "src/app/components/ui/LnInput";
+import LnField from "src/app/components/ui/LnField";
 import * as Yup from "yup";
 import { createUserAction } from "src/app/api/actions/user/createUserAction";
 import handleAction from "src/app/utils/helpers/handleAction";
+import { DateInput } from "@nextui-org/react";
+import { CalendarDate } from "@internationalized/date";
 
 export default function SignUp() {
   return (
@@ -21,7 +23,7 @@ export default function SignUp() {
             email: "",
             password: "",
             confirm_password: "",
-            birth_date: "",
+            birth_date: new CalendarDate(2000, 1, 1),
           }}
           validationSchema={Yup.object({
             name: Yup.string().required("Nome é obrigatório"),
@@ -33,12 +35,13 @@ export default function SignUp() {
               [Yup.ref("password"), null],
               "As senhas precisam ser iguais"
             ),
-            birth_date: Yup.string().required(
-              "Data de nascimento é obrigatória"
-            ),
+            birth_date: Yup.date().required("Data de nascimento é obrigatória"),
           })}
           onSubmit={async (values) => {
-            const res = await handleAction(createUserAction(values));
+            const res = await handleAction(
+              createUserAction(values),
+              "Criando conta"
+            );
             console.log(res);
           }}
         >
@@ -47,19 +50,23 @@ export default function SignUp() {
               <Form className="w-full">
                 <div className="flex flex-col">
                   <div>
-                    <LnInput
+                    <LnField
                       name="name"
                       description="Esse é o seu apelido"
                       label="Nome"
                     />
-                    <LnInput name="email" type="email" label="E-mail" />
-                    <LnInput name="password" type="password" label="Senha" />
-                    <LnInput
+                    <LnField name="email" type="email" label="E-mail" />
+                    <LnField name="password" type="password" label="Senha" />
+                    <LnField
                       name="confirm_password"
                       type="password"
                       label="Confirmar senha"
                     />
-                    <LnInput name="birth_date" label="Data de nascimento" />
+                    <LnField
+                      component={DateInput}
+                      name="birth_date"
+                      label="Data de nascimento"
+                    />
                   </div>
                   <div className="grid grid-cols-2 w-full items-center justify-center">
                     <Link href="/sign-in" className="text-white font-bold">

@@ -3,7 +3,7 @@
 import { Button } from "@nextui-org/button";
 import { Form, Formik } from "formik";
 import Link from "next/link";
-import LnInput from "src/app/components/ui/LnInput";
+import LnInput from "src/app/components/ui/LnField";
 import * as Yup from "yup";
 
 export default function SignIn() {

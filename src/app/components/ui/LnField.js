@@ -4,16 +4,18 @@ import { Input } from "@nextui-org/react";
 import { Field } from "formik";
 
 export default function LnInput({
+  component = Input,
   name = "",
   label = "",
   color = "secondary",
   variant = "flat",
   type = "text",
 }) {
+  const Component = component;
   return (
     <Field name={name}>
       {({ field, form }) => (
-        <Input
+        <Component
           type={type}
           classNames={{
             base: "h-[80px]",
