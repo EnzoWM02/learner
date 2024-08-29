@@ -16,6 +16,7 @@ export default function LnInput({
     <Field name={name}>
       {({ field, form }) => (
         <Component
+          {...field}
           type={type}
           classNames={{
             base: "h-[80px]",
@@ -45,7 +46,10 @@ export default function LnInput({
             form.submitCount > 0 && form.touched[name] && form.errors[name]
           }
           errorMessage={form.errors[name]}
-          {...field}
+          onChange={(event) => {
+            console.log(event);
+            form.setFieldValue(name, event?.target?.value ?? event);
+          }}
         />
       )}
     </Field>

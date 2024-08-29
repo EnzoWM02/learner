@@ -6,6 +6,7 @@ import userSchema from "src/app/api/schemas/User/userSchema";
 import handleServerError from "src/app/utils/helpers/handleServerError";
 
 export async function createUserAction(form) {
+  console.log(`here`, form);
   try {
     const schema = userSchema.parse(form);
     const user = await prisma.user.create({

@@ -5,14 +5,19 @@ export default async function handleAction(
   promiseAction,
   loadingMessage = "Carregando"
 ) {
-  const res = await toast.promise(promiseAction, {
-    pending: loadingMessage,
-  });
+  try {
+    const res = await toast.promise(promiseAction, {
+      pending: loadingMessage,
+    });
 
-  if (res.error) {
-    handleClientError(res.error);
+    if (res?.error) {
+      handleClientError(res.error);
+      return null;
+    }
+
+    return res;
+  } catch (e) {
+    handleClientError(e);
     return null;
   }
-
-  return res;
 }

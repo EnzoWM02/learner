@@ -8,7 +8,15 @@ export default function handleClientError(error) {
     closeOnClick: true,
   };
 
+  console.error("clienterror", error);
+
   if (error.type === ErrorCodes.ZOD) {
-    spanToast("error", zodErrorHandler(error), toastOptions);
+    return spanToast("error", zodErrorHandler(error), toastOptions);
   }
+
+  if (error.type === ErrorCodes.PRISMA) {
+    return spanToast("error", error.errors, toastOptions);
+  }
+
+  return spanToast("error", error.errors, toastOptions);
 }

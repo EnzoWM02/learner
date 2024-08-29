@@ -1,13 +1,13 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import Link from "next/link";
 import LnField from "src/app/components/ui/LnField";
 import * as Yup from "yup";
 import { createUserAction } from "src/app/api/actions/user/createUserAction";
 import handleAction from "src/app/utils/helpers/handleAction";
-import { DateInput } from "@nextui-org/react";
+import { DatePicker } from "@nextui-org/react";
 import { CalendarDate } from "@internationalized/date";
 
 export default function SignUp() {
@@ -38,8 +38,12 @@ export default function SignUp() {
             birth_date: Yup.date().required("Data de nascimento é obrigatória"),
           })}
           onSubmit={async (values) => {
+            const submitValues = {
+              ...values,
+              birth_date: new Date(values.birth_date.toString()),
+            };
             const res = await handleAction(
-              createUserAction(values),
+              createUserAction(submitValues),
               "Criando conta"
             );
             console.log(res);
@@ -63,7 +67,7 @@ export default function SignUp() {
                       label="Confirmar senha"
                     />
                     <LnField
-                      component={DateInput}
+                      component={DatePicker}
                       name="birth_date"
                       label="Data de nascimento"
                     />
