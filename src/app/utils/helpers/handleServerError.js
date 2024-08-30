@@ -3,7 +3,6 @@ import ErrorCodes from "src/app/utils/constants/ErrorCodes";
 import { ZodError } from "zod";
 
 export default async function handleServerError(error) {
-  console.error(error);
   if (error instanceof ZodError) {
     const parsedZodError = error.errors.map((err) => {
       return {
@@ -24,7 +23,9 @@ export default async function handleServerError(error) {
     return {
       error: {
         type: ErrorCodes.PRISMA,
-        errors: error.message,
+        code: error.code,
+        meta: error.meta,
+        message: error.message,
       },
     };
   }

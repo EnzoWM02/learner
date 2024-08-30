@@ -12,14 +12,14 @@ export default function layout({ children }) {
   return (
     <>
       <motion.div
-        className={`${styles.auth_container} h-5/6 w-3/4 sm:w-2/4 lg:w-1/4 flex flex-col text-center p-5`}
+        className={`${styles.auth_container} h-5/6 w-3/4 sm:w-2/4 lg:w-1/4 flex flex-col p-5`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
       >
         {children}
         <a
-          className="text-white mt-auto"
+          className="text-white mt-auto text-center"
           target="_blank"
           href="https://enzomosman.com/"
           rel="noopener noreferrer"

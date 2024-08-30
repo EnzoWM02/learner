@@ -1,14 +1,13 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
-import { Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import Link from "next/link";
 import LnField from "src/app/components/ui/LnField";
 import * as Yup from "yup";
 import { createUserAction } from "src/app/api/actions/user/createUserAction";
 import handleAction from "src/app/utils/helpers/handleAction";
 import { DatePicker } from "@nextui-org/react";
-import { CalendarDate } from "@internationalized/date";
 
 export default function SignUp() {
   return (
@@ -23,7 +22,7 @@ export default function SignUp() {
             email: "",
             password: "",
             confirm_password: "",
-            birth_date: new CalendarDate(2000, 1, 1),
+            birth_date: null,
           }}
           validationSchema={Yup.object({
             name: Yup.string().required("Nome é obrigatório"),
@@ -42,11 +41,7 @@ export default function SignUp() {
               ...values,
               birth_date: new Date(values.birth_date.toString()),
             };
-            const res = await handleAction(
-              createUserAction(submitValues),
-              "Criando conta"
-            );
-            console.log(res);
+            await handleAction(createUserAction(submitValues), "Criando conta");
           }}
         >
           {() => {
@@ -73,7 +68,7 @@ export default function SignUp() {
                     />
                   </div>
                   <div className="grid grid-cols-2 w-full items-center justify-center">
-                    <Link href="/sign-in" className="text-white font-bold">
+                    <Link href="/sign-in" className="text-white font-bold text-center">
                       Voltar
                     </Link>
                     <Button color="default" size="lg" type="submit">
