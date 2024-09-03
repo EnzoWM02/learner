@@ -5,6 +5,7 @@ import { Form, Formik } from "formik";
 import Link from "next/link";
 import LnInput from "src/app/components/ui/LnField";
 import * as Yup from "yup";
+import { signIn } from "next-auth/react";
 
 export default function SignIn() {
   return (
@@ -20,10 +21,17 @@ export default function SignIn() {
             email: Yup.string()
               .email("E-mail inválido")
               .required("E-mail é obrigatório"),
-            password: Yup.string().required("Senha é obrigatória"),
+            password: Yup.string()
+              .min(8, "A senha deve ter no mínimo 8 digitos")
+              .required("Senha é obrigatória"),
           })}
-          onSubmit={(values) => {
-            console.log(values);
+          onSubmit={async (values) => {
+            let res = await signIn("credentials", {
+              email: values.email,
+              password: values.password,
+              callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}`,
+              redirect: false,
+            });
           }}
         >
           {() => {

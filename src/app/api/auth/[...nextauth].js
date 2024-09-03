@@ -1,7 +1,8 @@
 import NextAuth from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import CredentialsProvider from "next-auth/providers/credentials"
+import CredentialsProvider from "next-auth/providers/credentials";
 import { prisma } from "src/app/utils/prisma";
+import { loginAction } from "src/app/api/actions/Login/loginAction";
 
 const options = {
   providers: [
@@ -14,22 +15,11 @@ const options = {
           password: credentials.password,
         };
 
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/user/login`,
-          {
-            method: "POST",
-            body: JSON.stringify(userCredentials),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        const user = await res.json();
-
-        if (res.ok && user) {
-          return user;
-        } else {
+        const res = await loginAction(userCredentials);
+        if (res.error) {
           return null;
+        } else {
+          return res;
         }
       },
     }),
@@ -44,11 +34,11 @@ const options = {
     maxAge: 60 * 60 * 24 * 30,
     encryption: true,
   },
-
+  
   pages: {
-    signIn: "/login",
-    signOut: "/login",
-    error: "/login",
+    signIn: "/sign-in",
+    signOut: "/sign-in",
+    error: "/sign-in",
   },
 
   callbacks: {

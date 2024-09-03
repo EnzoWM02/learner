@@ -17,5 +17,9 @@ export default function handleClientError(error) {
     return spanToast("error", prismaErrorHandler(error), toastOptions);
   }
 
+  if (error.type === ErrorCodes.LOGIN) {
+    return spanToast("error", error.message, toastOptions);
+  }
+
   return spanToast("error", error, toastOptions);
 }

@@ -5,7 +5,7 @@ import { Form, Formik } from "formik";
 import Link from "next/link";
 import LnField from "src/app/components/ui/LnField";
 import * as Yup from "yup";
-import { createUserAction } from "src/app/api/actions/user/createUserAction";
+import { createUserAction } from "src/app/api/actions/User/createUserAction";
 import handleAction from "src/app/utils/helpers/handleAction";
 import { DatePicker } from "@nextui-org/react";
 
@@ -29,7 +29,9 @@ export default function SignUp() {
             email: Yup.string()
               .email("E-mail inválido")
               .required("E-mail é obrigatório"),
-            password: Yup.string().required("Senha é obrigatória"),
+            password: Yup.string()
+              .min(8, "A senha deve ter no mínimo 8 digitos")
+              .required("Senha é obrigatória"),
             confirm_password: Yup.string().oneOf(
               [Yup.ref("password"), null],
               "As senhas precisam ser iguais"
@@ -68,7 +70,10 @@ export default function SignUp() {
                     />
                   </div>
                   <div className="grid grid-cols-2 w-full items-center justify-center">
-                    <Link href="/sign-in" className="text-white font-bold text-center">
+                    <Link
+                      href="/sign-in"
+                      className="text-white font-bold text-center"
+                    >
                       Voltar
                     </Link>
                     <Button color="default" size="lg" type="submit">
