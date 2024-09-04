@@ -1,17 +1,4 @@
-import { getSession } from "next-auth/react";
-import { NextResponse } from "next/server";
-
-// This function can be marked `async` if using `await` inside
-export async function middleware(request) {
-  const session = await getSession();
-  console.log("SESSAO", session, request.url);
-
-  if (!session) {
-    return NextResponse.redirect(new URL("/sign-in", request.url));
-  }
-
-  return NextResponse.next();
-}
+export { default } from "next-auth/middleware"
 
 export const config = {
   matcher: [

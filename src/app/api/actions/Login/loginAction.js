@@ -21,7 +21,7 @@ export async function loginAction(form) {
       },
     });
     if (user && user.password === hashPassword(schema.password)) {
-      return this.exclude(user, ["password"]);
+      return exclude(user, ["password"]);
     } else {
       return handleServerError({
         type: ErrorCodes.LOGIN,

@@ -6,8 +6,13 @@ import Link from "next/link";
 import LnInput from "src/app/components/ui/LnField";
 import * as Yup from "yup";
 import { signIn } from "next-auth/react";
+import handleClientError from "src/app/utils/helpers/handleClientError";
+import ErrorCodes from "src/app/utils/constants/ErrorCodes";
+import { useRouter } from "next/navigation";
 
 export default function SignIn() {
+  const router = useRouter();
+
   return (
     <>
       <div className="text-white w-full flex items-center justify-center text-4xl font-semibold my-14 flex-col">
@@ -29,9 +34,18 @@ export default function SignIn() {
             let res = await signIn("credentials", {
               email: values.email,
               password: values.password,
-              callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}`,
               redirect: false,
             });
+
+            console.log(res);
+            if (res?.ok) {
+              router.push("/");
+            } else {
+              handleClientError({
+                type: ErrorCodes.LOGIN,
+                message: "E-mail ou senha inválidos",
+              });
+            }
           }}
         >
           {() => {
