@@ -3,7 +3,7 @@
 import { Button } from "@nextui-org/button";
 import { Form, Formik } from "formik";
 import Link from "next/link";
-import LnField from "src/app/components/ui/LnField";
+import LnField from "src/app/components/input/LnField";
 import * as Yup from "yup";
 import { createUserAction } from "src/app/api/actions/User/createUserAction";
 import handleAction from "src/app/utils/helpers/handleAction";

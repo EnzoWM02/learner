@@ -10,14 +10,12 @@ export const authOptions = {
       id: "credentials",
       name: "Credentials",
       async authorize(credentials) {
-        console.log("credentials", credentials);
         const userCredentials = {
           email: credentials.email,
           password: credentials.password,
         };
 
         const res = await loginAction(userCredentials);
-        console.log("res", res);
         if (res.error) {
           return null;
         } else {

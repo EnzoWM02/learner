@@ -3,12 +3,13 @@
 import { Button } from "@nextui-org/button";
 import { Form, Formik } from "formik";
 import Link from "next/link";
-import LnInput from "src/app/components/ui/LnField";
+import LnInput from "src/app/components/input/LnField";
 import * as Yup from "yup";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import handleClientError from "src/app/utils/helpers/handleClientError";
 import ErrorCodes from "src/app/utils/constants/ErrorCodes";
 import { useRouter } from "next/navigation";
+import handleAction from "src/app/utils/helpers/handleAction";
 
 export default function SignIn() {
   const router = useRouter();
@@ -31,15 +32,17 @@ export default function SignIn() {
               .required("Senha é obrigatória"),
           })}
           onSubmit={async (values) => {
-            let res = await signIn("credentials", {
-              email: values.email,
-              password: values.password,
-              redirect: false,
-            });
+            let res = await handleAction(
+              signIn("credentials", {
+                email: values.email,
+                password: values.password,
+                redirect: false,
+              }),
+              "Logando..."
+            );
 
-            console.log(res);
             if (res?.ok) {
-              router.push("/");
+              router.push("/dashboard");
             } else {
               handleClientError({
                 type: ErrorCodes.LOGIN,
