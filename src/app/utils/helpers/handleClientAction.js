@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import handleClientError from "src/app/utils/helpers/handleClientError";
 
-export default async function handleAction(
+export default async function handleClientAction(
   promiseAction,
   loadingMessage = "Carregando"
 ) {

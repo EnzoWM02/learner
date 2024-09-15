@@ -5,11 +5,11 @@ import { Form, Formik } from "formik";
 import Link from "next/link";
 import LnInput from "src/app/components/input/LnField";
 import * as Yup from "yup";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import handleClientError from "src/app/utils/helpers/handleClientError";
 import ErrorCodes from "src/app/utils/constants/ErrorCodes";
 import { useRouter } from "next/navigation";
-import handleAction from "src/app/utils/helpers/handleAction";
+import handleClientAction from "src/app/utils/helpers/handleClientAction";
 
 export default function SignIn() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function SignIn() {
               .required("Senha é obrigatória"),
           })}
           onSubmit={async (values) => {
-            let res = await handleAction(
+            let res = await handleClientAction(
               signIn("credentials", {
                 email: values.email,
                 password: values.password,

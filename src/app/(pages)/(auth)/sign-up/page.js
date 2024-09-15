@@ -6,10 +6,13 @@ import Link from "next/link";
 import LnField from "src/app/components/input/LnField";
 import * as Yup from "yup";
 import { createUserAction } from "src/app/api/actions/User/createUserAction";
-import handleAction from "src/app/utils/helpers/handleAction";
+import handleClientAction from "src/app/utils/helpers/handleClientAction";
 import { DatePicker } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
+  const router = useRouter();
+
   return (
     <>
       <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-5">
@@ -43,7 +46,16 @@ export default function SignUp() {
               ...values,
               birth_date: new Date(values.birth_date.toString()),
             };
-            await handleAction(createUserAction(submitValues), "Criando conta");
+            const res = await handleClientAction(
+              createUserAction(submitValues),
+              "Criando conta"
+            ); 
+            
+            console.log(res, !res.error);
+
+            if (!res.error) {
+              router.push("/sign-in");
+            }
           }}
         >
           {() => {
