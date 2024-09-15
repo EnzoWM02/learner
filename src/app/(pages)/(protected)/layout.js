@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import StoreProvider from "src/app/components/providers/store/StoreProvider";
+import StoreProviderLoader from "src/app/components/providers/store/StoreProviderLoader";
 import BaseLayout from "src/app/components/ui/BaseLayout";
 import { Loading } from "src/app/components/ui/Loading";
 
@@ -11,7 +12,9 @@ export default function layout({ children }) {
       }
     >
       <StoreProvider>
-        <BaseLayout>{children}</BaseLayout>
+        <StoreProviderLoader>
+          <BaseLayout>{children}</BaseLayout>
+        </StoreProviderLoader>
       </StoreProvider>
     </Suspense>
   );
