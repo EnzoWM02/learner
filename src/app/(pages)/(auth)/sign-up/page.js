@@ -15,7 +15,7 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold mb-5">
+      <div className="w-full flex items-center justify-center text-4xl font-semibold mb-5">
         <span>Registre-se</span>
       </div>
       <div className="flex flex-col gap-5 items-center">
@@ -82,7 +82,7 @@ export default function SignUp() {
                   <div className="grid grid-cols-2 w-full items-center justify-center">
                     <Link
                       href="/sign-in"
-                      className="text-white font-bold text-center"
+                      className="font-bold text-center"
                     >
                       Voltar
                     </Link>

@@ -20,8 +20,8 @@ export default function LnInput({
           type={type}
           classNames={{
             base: "h-[80px]",
-            label: "text-black/50 dark:text-white/90",
-            input: ["text-black/90 dark:text-white/90"],
+            label: "text-black/50 dark:/90",
+            input: ["text-black/90 dark:/90"],
           }}
           variant={variant}
           color={color}

@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <main className="learner-theme bg-background min-h-screen	min-w-screen">{children}</main>
+          <main className="learner-theme-auth bg-background min-h-screen	min-w-screen">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

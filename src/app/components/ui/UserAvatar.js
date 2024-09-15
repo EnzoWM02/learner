@@ -1,17 +1,30 @@
-import { Image } from "@nextui-org/react";
+"use client";
+
+import { Avatar } from "@nextui-org/react";
+import { useEffect, useState, forwardRef } from "react";
 import { getRandomCatImage } from "src/app/api/actions/Avatar/getRandomCatImage";
-import handleServerAction from "src/app/utils/helpers/handleServerAction";
+import { Loading } from "src/app/components/ui/Loading";
 
-export default async function UserAvatar() {
-  const catUrl = await handleServerAction(getRandomCatImage());
+const UserAvatar = forwardRef((props, ref) => {
+  const [catUrl, setCatUrl] = useState("");
 
-  return (
-    <Image
-      src={catUrl}
-      className="w-full h-full rounded-full"
-      alt="Cat image"
-      height={32}
-      width={32}
-    />
-  );
-}
+  async function getCatImage() {
+    const catUrl = await getRandomCatImage();
+    setCatUrl(catUrl);
+  }
+
+  useEffect(() => {
+    if (catUrl === "") {
+      getCatImage();
+    }
+  }, [catUrl]);
+
+  if (!catUrl) {
+    return <Loading />;
+  }
+
+  return <Avatar src={catUrl} ref={ref} {...props} />;
+});
+
+UserAvatar.displayName = "UserAvatar";
+export default UserAvatar;

@@ -16,7 +16,7 @@ export default function SignIn() {
 
   return (
     <>
-      <div className="text-white w-full flex items-center justify-center text-4xl font-semibold my-14 flex-col">
+      <div className="w-full flex items-center justify-center text-4xl font-semibold my-14 flex-col">
         <span>Bem-vindo ao</span>
         <span className="learner-title font-bold">Learner</span>
       </div>
@@ -67,7 +67,7 @@ export default function SignIn() {
             );
           }}
         </Formik>
-        <span className="text-white">
+        <span className="">
           Não tem uma conta?
           <Link href="/sign-up" className="font-bold">
             {" "}

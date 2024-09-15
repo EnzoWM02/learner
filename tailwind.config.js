@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     nextui({
       themes: {
-        "learner-theme": {
+        "learner-theme-auth": {
           extend: "light",
           colors: {
             background: "#f2f2f2",
@@ -52,6 +52,24 @@ module.exports = {
               foreground: "#000000",
             },
             focus: "#BEF264",
+          },
+        },
+        "learner-theme-protected": {
+          extend: "dark",
+          colors: {
+            primary: {
+              50: "#f7eaff",
+              100: "#dfc5ef",
+              200: "#c9a0e0",
+              300: "#b77ad2",
+              400: "#9a54c4",
+              500: "#793bab",
+              600: "#582d85",
+              700: "#3b1f60",
+              800: "#20123b",
+              900: "#0a0418",
+              DEFAULT: "#793bab",
+            },
           },
         },
       },

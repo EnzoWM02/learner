@@ -6,16 +6,18 @@ import { Loading } from "src/app/components/ui/Loading";
 
 export default function layout({ children }) {
   return (
-    <Suspense
-      fallback={
-        <Loading className="min-w-screen min-h-screen flex items-center justify-center" />
-      }
-    >
-      <StoreProvider>
-        <StoreProviderLoader>
-          <BaseLayout>{children}</BaseLayout>
-        </StoreProviderLoader>
-      </StoreProvider>
-    </Suspense>
+    <main className="learner-theme-protected">
+      <Suspense
+        fallback={
+          <Loading className="min-w-screen min-h-screen flex items-center justify-center" />
+        }
+      >
+        <StoreProvider>
+          <StoreProviderLoader>
+            <BaseLayout>{children}</BaseLayout>
+          </StoreProviderLoader>
+        </StoreProvider>
+      </Suspense>
+    </main>
   );
 }

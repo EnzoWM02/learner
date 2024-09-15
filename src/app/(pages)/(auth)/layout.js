@@ -20,7 +20,7 @@ export default async function layout({ children }) {
     <>
       <AnimatedFadeIn>{children}</AnimatedFadeIn>
       <a
-        className="text-white mt-auto text-center"
+        className="mt-auto text-center"
         target="_blank"
         href="https://enzomosman.com/"
         rel="noopener noreferrer"

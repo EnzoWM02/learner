@@ -8,7 +8,7 @@ export default function Icon({
   return (
     <div className="flex items-center justify-center flex-col gap-1">
       <Icon color={color} size={size} />
-      <span className="text-white text-sm">{label}</span>
+      <span className="text-sm">{label}</span>
     </div>
   );
 }

@@ -33,7 +33,7 @@ export default function NavbarIcon({ icon, label = undefined, path = "/" }) {
       onClick={() => router.push(path)}
     >
       <Icon color="white" size="32px" />
-      <span className="text-white text-sm">{label}</span>
+      <span className="text-sm">{label}</span>
       <div
         ref={barRef}
         className="w-0 h-[2px] bg-white transition-all rounded-xl"
