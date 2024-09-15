@@ -50,8 +50,6 @@ export default function SignUp() {
               createUserAction(submitValues),
               "Criando conta"
             ); 
-            
-            console.log(res, !res.error);
 
             if (!res.error) {
               router.push("/sign-in");

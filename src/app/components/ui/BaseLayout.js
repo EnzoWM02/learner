@@ -6,12 +6,13 @@ import { useUserStore } from "src/stores/userStore";
 
 export default function BaseLayout({ children }) {
   const user = useUserStore((state) => state.user);
-
   if (!user) {
     return (
       <Loading className="min-w-screen min-h-screen flex items-center justify-center" />
     );
   }
+
+  console.log(user);
 
   return <div>{JSON.stringify(user)}</div>;
 }
