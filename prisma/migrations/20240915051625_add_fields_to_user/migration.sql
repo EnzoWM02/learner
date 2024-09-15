@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "users" ADD COLUMN     "coins" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "experience" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "is_admin" BOOLEAN NOT NULL DEFAULT false;

@@ -15,13 +15,16 @@ datasource db {
 }
 
 model User {
-  id         String    @id @default(cuid())
+  id         String   @id @default(cuid())
   name       String
-  email      String    @unique
+  email      String   @unique
   password   String
   birth_date DateTime
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  experience Int      @default(0)
+  coins      Int      @default(0)
+  is_admin   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   @@map("users")
 }
