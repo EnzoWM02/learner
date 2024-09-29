@@ -13,6 +13,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-span {
+span, a {
   color: white;
 }

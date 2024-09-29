@@ -69,7 +69,7 @@ export default function SignIn() {
         </Formik>
         <span className="">
           Não tem uma conta?
-          <Link href="/sign-up" className="font-bold">
+          <Link href="/sign-up" className="font-bold text-primary-700">
             {" "}
             Registre-se
           </Link>

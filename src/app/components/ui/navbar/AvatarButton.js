@@ -18,24 +18,37 @@ export default function AvatarButton() {
   return (
     <Dropdown
       classNames={{
-        content: "bg-primary-900",
+        content: "dark shadow-sm",
       }}
     >
       <DropdownTrigger>
-        <UserAvatar isBordered as="button" className="transition-transform" />
+        <UserAvatar
+          isBordered
+          as="button"
+          className="transition-transform w-[64px] h-[64px]"
+        />
       </DropdownTrigger>
       <DropdownMenu aria-label="Ações do perfil" variant="flat">
-        <DropdownItem key="user" className="h-14 gap-2">
-          <span className="font-semibold">Bem-vindo</span>
-          <span className="font-semibold">{user.email}</span>
-        </DropdownItem>
-        <DropdownItem key="profile">Meu perfil</DropdownItem>
+        <DropdownSection showDivider>
+          <DropdownItem
+            key="user"
+            className="h-14 gap-2 cursor-default"
+            isReadOnly
+          >
+            <div className="flex flex-col">
+              <span className="font-semibold">Bem-vindo</span>
+              <span className="font-semibold">{user.email}</span>
+            </div>
+          </DropdownItem>
+          <DropdownItem key="profile">Meu perfil</DropdownItem>
+        </DropdownSection>
         <DropdownSection>
           <DropdownItem
             key="log-out"
             className="text-danger"
             color="danger"
-            startContent={<Icon icon={FaDoorOpen} color="white" />}
+            startContent={<Icon icon={FaDoorOpen} color="white" size="15" />}
+            href="/sign-out"
           >
             Sair
           </DropdownItem>
