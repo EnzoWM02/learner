@@ -1,6 +1,7 @@
 import ActivitiesType from "src/app/(pages)/(protected)/activities/constants/ActivitiesType";
 
 export default Object.freeze({
+  id: "js-1",
   title: "Sobre javascript",
   description:
     "Javascript é uma linguagem de programação de alto nível, interpretada, orientada a objetos, imperativa, estruturada e dinâmica. Foi padronizada pela ECMA através das especificações ECMA-262. O JavaScript é uma linguagem versátil e muito utilizada em aplicações web, sendo uma das principais linguagens de programação para o desenvolvimento de aplicações web.",

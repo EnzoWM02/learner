@@ -13,7 +13,10 @@ export default function NavbarIcon({ icon, label = undefined, path = "/" }) {
 
   useEffect(() => {
     if (barRef.current) {
-      if (pathname === path) {
+      if (
+        pathname.split("/").filter((path) => !!path)[0] ===
+        path.replace("/", "")
+      ) {
         barRef.current.style.width = "86px";
       } else {
         if (mouseHover) {
