@@ -1,3 +1,44 @@
-export default function SingleChoice () {
-    return <div>SingleChoice</div>;
+import { Button, Radio, RadioGroup } from "@nextui-org/react";
+import { Form, Formik } from "formik";
+import LnRadioGroup from "src/app/components/input/LnRadioGroup";
+import * as Yup from "yup";
+
+export default function SingleChoice({ options }) {
+  return (
+    <div>
+      <Formik
+        initialValues={{ value: "" }}
+        validationSchema={Yup.object({
+          value: Yup.string().required("Selecione pelo menos uma opção"),
+        })}
+        onSubmit={async (values) => {
+          console.log(values);
+        }}
+      >
+        {() => {
+          return (
+            <Form className="w-full">
+              <div className="flex flex-col">
+                <LnRadioGroup name="value">
+                  {options.map((option, index) => (
+                    <Radio key={index} value={String(index)}>
+                      {option.title}
+                    </Radio>
+                  ))}
+                </LnRadioGroup>
+                <Button
+                  className="w-10 mt-5"
+                  color="primary"
+                  size="lg"
+                  type="submit"
+                >
+                  Enviar
+                </Button>
+              </div>
+            </Form>
+          );
+        }}
+      </Formik>
+    </div>
+  );
 }

@@ -1,6 +1,6 @@
 import ActivitiesType from "src/app/(pages)/(protected)/activities/constants/ActivitiesType";
 
-export default Object.freeze({
+const JavascriptAbout = {
   id: "js-1",
   title: "Sobre javascript",
   description:
@@ -26,5 +26,7 @@ export default Object.freeze({
         correct: false,
       },
     ],
-  },
-});
+  }
+};
+
+export default JavascriptAbout;

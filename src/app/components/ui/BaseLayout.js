@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "src/app/assets/styles/ui/base-layout.module.css";
 import Navbar from "src/app/components/ui/navbar/Navbar";
 import { useUserStore } from "src/stores/userStore";
 

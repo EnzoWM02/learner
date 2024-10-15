@@ -3,7 +3,7 @@
 import { Button } from "@nextui-org/button";
 import { Form, Formik } from "formik";
 import Link from "next/link";
-import LnInput from "src/app/components/input/LnField";
+import LnField from "src/app/components/input/LnField";
 import * as Yup from "yup";
 import { signIn } from "next-auth/react";
 import handleClientError from "src/app/utils/helpers/handleClientError";
@@ -56,8 +56,8 @@ export default function SignIn() {
               <Form className="w-full">
                 <div className="flex flex-col gap-5 ">
                   <div>
-                    <LnInput name="email" type="email" label="E-mail" />
-                    <LnInput name="password" type="password" label="Senha" />
+                    <LnField name="email" type="email" label="E-mail" />
+                    <LnField name="password" type="password" label="Senha" />
                   </div>
                   <Button color="default" size="lg" type="submit">
                     Login
