@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import ActivitiesList from "src/app/(pages)/(protected)/activities/constants/ActivitiesList";
 import { submitActivityAction } from "src/app/api/actions/Activities/submitActivityAction";
@@ -9,7 +10,8 @@ import { useUserStore } from "src/stores/userStore";
 
 export default function ActivityPage({ params }) {
   const updateUser = useUserStore((state) => state.updateUser);
-  console.log("updateUserStore", updateUser);
+  const router = useRouter();
+
   const activity = Object.values(ActivitiesList)
     .find((list) => list.list.find((item) => item.id === params.activityId))
     .list.find((item) => item.id === params.activityId);
@@ -25,9 +27,9 @@ export default function ActivityPage({ params }) {
         }),
         "Validando sua resposta..."
       );
-      console.log("updateing user");
       await updateUser();
       toast.success("A resposta está correta!");
+      router.push("/activities");
     } else {
       toast.error("A resposta está incorreta! Tente novamente");
     }

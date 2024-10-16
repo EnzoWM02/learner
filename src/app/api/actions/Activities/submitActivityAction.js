@@ -13,7 +13,18 @@ export async function submitActivityAction(payload) {
     const schema = activitySubmitSchema.parse(payload);
     const session = await getServerSession(authOptions);
 
-    const activityDone = await prisma.activityDone.create({
+    let activityDone = await prisma.activityDone.findFirst({
+      where: {
+        user_id: session.id,
+        activity_id: schema.id,
+      },
+    });
+
+    if (activityDone) {
+      return activityDone;
+    }
+
+    activityDone = await prisma.activityDone.create({
       data: {
         user_id: session.id,
         activity_id: schema.id,

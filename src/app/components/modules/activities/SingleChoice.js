@@ -12,7 +12,6 @@ export default function SingleChoice({ options, fnSubmit }) {
           value: Yup.string().required("Selecione pelo menos uma opção"),
         })}
         onSubmit={async (values) => {
-          console.log(options[values.value].correct);
           if (options[values.value].correct) {
             fnSubmit(true);
           } else {
@@ -26,7 +25,11 @@ export default function SingleChoice({ options, fnSubmit }) {
               <div className="flex flex-col">
                 <LnRadioGroup name="value">
                   {options.map((option, index) => (
-                    <Radio key={index} value={String(index)}>
+                    <Radio
+                      key={index}
+                      value={String(index)}
+                      classNames={{ base: "light", label: "text-white" }}
+                    >
                       {option.title}
                     </Radio>
                   ))}

@@ -19,7 +19,7 @@ export default function LnRadioGroup({
       color={color}
       variant={variant}
       type={type}
-      classNames={{ undefined }}
+      classNames={{ base: "light", label: "text-white" }}
     >
       {children}
     </LnField>
