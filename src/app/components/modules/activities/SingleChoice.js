@@ -3,7 +3,7 @@ import { Form, Formik } from "formik";
 import LnRadioGroup from "src/app/components/input/LnRadioGroup";
 import * as Yup from "yup";
 
-export default function SingleChoice({ options }) {
+export default function SingleChoice({ options, fnSubmit }) {
   return (
     <div>
       <Formik
@@ -12,7 +12,12 @@ export default function SingleChoice({ options }) {
           value: Yup.string().required("Selecione pelo menos uma opção"),
         })}
         onSubmit={async (values) => {
-          console.log(values);
+          console.log(options[values.value].correct);
+          if (options[values.value].correct) {
+            fnSubmit(true);
+          } else {
+            fnSubmit(false);
+          }
         }}
       >
         {() => {
