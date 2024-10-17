@@ -17,6 +17,7 @@ export async function submitActivityAction(payload) {
       where: {
         user_id: session.id,
         activity_id: schema.id,
+        track_id: schema.track_id,
       },
     });
 
@@ -28,6 +29,7 @@ export async function submitActivityAction(payload) {
       data: {
         user_id: session.id,
         activity_id: schema.id,
+        track_id: schema.track_id,
       },
     });
 

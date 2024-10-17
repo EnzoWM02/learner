@@ -1,5 +1,4 @@
-.activities_component_container {
-  /* From https://css.glass */
+.card_container {
   background: rgba(236, 199, 255, 0.31);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -7,6 +6,6 @@
   -webkit-backdrop-filter: blur(10.5px);
   border: 1px solid rgba(236, 199, 255, 1);
   z-index: 1;
-  width: 80%;
   padding: 20px;
+  transition: all 0.3s ease;
 }

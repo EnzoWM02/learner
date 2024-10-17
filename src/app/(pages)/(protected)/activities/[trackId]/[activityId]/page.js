@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import ActivitiesList from "src/app/(pages)/(protected)/activities/constants/ActivitiesList";
 import { submitActivityAction } from "src/app/api/actions/Activities/submitActivityAction";
-import styles from "src/app/assets/styles/modules/activities.module.css";
+import Card from "src/app/components/ui/Card";
 import handleClientAction from "src/app/utils/helpers/handleClientAction";
 import { useUserStore } from "src/stores/userStore";
 
-export default function ActivityPage({ params }) {
+export default function Activity({ params }) {
   const updateUser = useUserStore((state) => state.updateUser);
   const router = useRouter();
 
@@ -22,6 +22,7 @@ export default function ActivityPage({ params }) {
       await handleClientAction(
         submitActivityAction({
           id: activity.id,
+          track_id: params.trackId,
           experience: activity.experience,
           coins: activity.coins,
         }),
@@ -40,12 +41,12 @@ export default function ActivityPage({ params }) {
       <span className="text-white text-2xl">{activity.title}</span>
       <span className="text-gray-300 text-sm pt-2">{activity.description}</span>
       <div className="w-full flex items-center justify-center mt-10">
-        <div className={styles.activities_component_container}>
+        <Card className="w-4/5">
           <div className="mb-4">
             <span className="text-white">{activity.questions.title}</span>
           </div>
           <Component fnSubmit={fnSubmit} options={activity.questions.options} />
-        </div>
+        </Card>
       </div>
     </div>
   );

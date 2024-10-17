@@ -15,7 +15,6 @@ export async function getUserActivitiesAction() {
       },
     });
 
-    console.log('passing here');
     return activities;
   } catch (e) {
     console.log(e);
