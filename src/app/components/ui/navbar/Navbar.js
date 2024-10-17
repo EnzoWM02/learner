@@ -38,7 +38,7 @@ export default function Navbar() {
     },
   ];
   return (
-    <div className="fixed top-0 left-0 w-[120px] h-screen bg-primary-900">
+    <div className="fixed top-[5px] left-0 w-[120px] h-screen bg-primary-900">
       <div className="flex flex-col h-screen py-5">
         <div className="flex flex-col gap-8">
           {navbarRoutes.map((route, index) => (
