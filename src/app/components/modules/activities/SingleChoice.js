@@ -28,7 +28,10 @@ export default function SingleChoice({ options, fnSubmit }) {
                     <Radio
                       key={index}
                       value={String(index)}
-                      classNames={{ base: "light", label: "text-white" }}
+                      classNames={{
+                        base: "light",
+                        label: "text-white text-sm",
+                      }}
                     >
                       {option.title}
                     </Radio>
@@ -36,7 +39,7 @@ export default function SingleChoice({ options, fnSubmit }) {
                 </LnRadioGroup>
                 <Button
                   className="w-10 mt-5"
-                  color="primary"
+                  color="secondary"
                   size="lg"
                   type="submit"
                 >

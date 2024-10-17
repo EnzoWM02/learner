@@ -5,6 +5,7 @@ const JavascriptAbout = {
   coins: 10,
   experience: 100,
   title: "Sobre javascript",
+  new: true,
   description:
     "Javascript é uma linguagem de programação de alto nível, interpretada, orientada a objetos, imperativa, estruturada e dinâmica. Foi padronizada pela ECMA através das especificações ECMA-262. O JavaScript é uma linguagem versátil e muito utilizada em aplicações web, sendo uma das principais linguagens de programação para o desenvolvimento de aplicações web.",
   type: ActivitiesType.singleChoice,

@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "src/app/utils/prisma";
+import prisma from "src/app/utils/prisma";
 import { hashPassword } from "src/app/utils/helpers/password";
 import userSchema from "src/app/api/schemas/User/userSchema";
 import handleServerError from "src/app/utils/helpers/handleServerError";

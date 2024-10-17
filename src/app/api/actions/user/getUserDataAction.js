@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "src/app/utils/prisma";
+import prisma from "src/app/utils/prisma";
 import handleServerError from "src/app/utils/helpers/handleServerError";
 import userDataActionSchema from "src/app/api/schemas/User/userDataActionSchema";
 import userDataSchema from "src/app/api/schemas/User/userDataSchema";

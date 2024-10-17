@@ -4,7 +4,7 @@ import loginSchema from "src/app/api/schemas/Login/loginSchema";
 import ErrorCodes from "src/app/utils/constants/ErrorCodes";
 import handleServerError from "src/app/utils/helpers/handleServerError";
 import { hashPassword } from "src/app/utils/helpers/password";
-import { prisma } from "src/app/utils/prisma";
+import prisma from "src/app/utils/prisma";
 
 export async function loginAction(form) {
   try {

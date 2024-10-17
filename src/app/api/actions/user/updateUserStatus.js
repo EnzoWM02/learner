@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "src/app/utils/prisma";
+import prisma from "src/app/utils/prisma";
 import handleServerError from "src/app/utils/helpers/handleServerError";
 
 export async function updateUserStatus(userId, experience, coins) {
