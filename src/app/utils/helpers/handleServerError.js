@@ -2,7 +2,7 @@ import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import ErrorCodes from "src/app/utils/constants/ErrorCodes";
 import { ZodError } from "zod";
 
-export default async function qhandleServerError(error) {
+export default async function handleServerError(error) {
   if (error instanceof ZodError) {
     const parsedZodError = error.errors.map((err) => {
       return {

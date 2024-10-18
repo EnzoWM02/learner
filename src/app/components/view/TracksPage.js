@@ -19,7 +19,7 @@ export default function TracksPage({ userTracksCountActionPromise }) {
           "Bem-vindo a escolha de rotas, aqui você poderá escolher uma rota que deseja participar e realizar atividades que vão te ensinar e aprimorar suas habilidades!"
         }
       />
-      <div className=" mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {ActivitiesList.map((activity, index) => {
           return (
             <Container

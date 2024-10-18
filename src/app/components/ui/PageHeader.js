@@ -6,7 +6,7 @@ export default function PageHeader({ message }) {
   return (
     <Card
       classNames={{
-        base: ["bg-primary-100"],
+        base: ["bg-primary-100 mb-6"],
       }}
     >
       <CardBody>
