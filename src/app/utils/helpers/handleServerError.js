@@ -3,6 +3,7 @@ import ErrorCodes from "src/app/utils/constants/ErrorCodes";
 import { ZodError } from "zod";
 
 export default async function handleServerError(error) {
+  console.error(error);
   if (error instanceof ZodError) {
     const parsedZodError = error.errors.map((err) => {
       return {

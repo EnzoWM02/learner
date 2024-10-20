@@ -15,17 +15,17 @@ datasource db {
 }
 
 model User {
-  id           String         @id @default(cuid())
-  name         String
-  email        String         @unique
-  password     String
-  birth_date   DateTime
-  experience   Int            @default(0)
-  coins        Int            @default(0)
-  is_admin     Boolean        @default(false)
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
-  ActivityDone ActivityDone[]
+  id             String         @id @default(cuid())
+  name           String
+  email          String         @unique
+  password       String
+  birth_date     DateTime
+  experience     Int            @default(0)
+  coins          Int            @default(0)
+  is_admin       Boolean        @default(false)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  activitiesDone ActivityDone[]
 
   @@map("users")
 }

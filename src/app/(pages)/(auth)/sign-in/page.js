@@ -16,8 +16,8 @@ export default function SignIn() {
 
   return (
     <>
-      <div className="w-full flex items-center justify-center text-4xl font-semibold my-14 flex-col">
-        <span>Bem-vindo ao</span>
+      <div className="w-full flex items-center justify-center text-4xl font-semibold my-[5vh] flex-col">
+        <span className="text-center">Bem-vindo ao</span>
         <span className="learner-title font-bold">Learner</span>
       </div>
       <div className="flex flex-col gap-5 items-center">

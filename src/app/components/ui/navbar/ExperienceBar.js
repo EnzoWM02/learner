@@ -11,8 +11,6 @@ export default function ExperienceBar() {
     (state) => state.nextLevelRequiredExperience
   );
 
-  console.log(actualLevelExperience, nextLevelRequiredExperience);
-
   return (
     <div className="fixed top-0 left-0 w-full h-[5px] bg-gray-950">
       <Tooltip
