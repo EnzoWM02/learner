@@ -1,10 +1,11 @@
 import JavascriptAbout from "src/app/(pages)/(protected)/activities/constants/javascript/JavascriptAbout";
+import JavascriptVariables from "src/app/(pages)/(protected)/activities/constants/javascript/JavascriptVariables";
 import JsIcon from "src/app/assets/images/modules/activities/JsIcon.png";
 
 const JavascriptList = {
   id: "js",
   title: "Javascript",
-  list: [{ ...JavascriptAbout }],
+  list: [{ ...JavascriptAbout }, { ...JavascriptVariables }],
   icon: JsIcon,
   links: [
     {

@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import { getUserTracksCountAction } from "src/app/api/actions/Activities/getUserTracksCountAction";
+import { getUserTracksObjectCountAction } from "src/app/api/actions/Activities/getUserTracksObjectCountAction";
 import { Loading } from "src/app/components/ui/Loading";
 import TracksPage from "src/app/components/view/TracksPage";
 
 export default function Activities() {
-  const userTracksCountActionPromise = getUserTracksCountAction();
+  const userTracksCountActionPromise = getUserTracksObjectCountAction();
 
   return (
     <Suspense fallback={<Loading />}>

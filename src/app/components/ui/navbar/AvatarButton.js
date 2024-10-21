@@ -40,7 +40,8 @@ export default function AvatarButton() {
               <span className="font-semibold">{user.email}</span>
             </div>
           </DropdownItem>
-          <DropdownItem key="profile">Meu perfil</DropdownItem>
+          <DropdownItem key="profile">Meu perfil</DropdownItem>D
+          <DropdownItem key="about" href="https://enzomosman.com" target="_blank">Sobre</DropdownItem>D
         </DropdownSection>
         <DropdownSection>
           <DropdownItem
