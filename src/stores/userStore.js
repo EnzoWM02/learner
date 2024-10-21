@@ -1,5 +1,5 @@
 import { getSession } from "next-auth/react";
-import { getUserDataAction } from "src/app/api/actions/User/getUserDataAction";
+import { getUserDataAction } from "src/app/api/actions/user/getUserDataAction";
 import handleServerAction from "src/app/utils/helpers/handleServerAction";
 import calculateLevelService from "src/app/utils/services/User/calculateLevelService";
 import { create } from "zustand";

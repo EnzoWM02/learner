@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { getUserDataAction } from "src/app/api/actions/User/getUserDataAction";
+import { getUserDataAction } from "src/app/api/actions/user/getUserDataAction";
 import { authOptions } from "src/app/api/auth/[...nextauth]/route";
 import UserDataProvider from "src/app/components/providers/store/UserDataProvider";
 import handleServerAction from "src/app/utils/helpers/handleServerAction";

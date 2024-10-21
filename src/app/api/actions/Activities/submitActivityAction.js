@@ -4,7 +4,7 @@ import prisma from "src/app/utils/prisma";
 import handleServerError from "src/app/utils/helpers/handleServerError";
 import activitySubmitSchema from "src/app/api/schemas/Activity/activitySubmitSchema";
 import handleServerAction from "src/app/utils/helpers/handleServerAction";
-import { updateUserStatus } from "src/app/api/actions/User/updateUserStatus";
+import { updateUserStatus } from "src/app/api/actions/user/updateUserStatus";
 import { getServerSession } from "next-auth";
 import { authOptions } from "src/app/api/auth/[...nextauth]/route";
 

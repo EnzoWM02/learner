@@ -5,10 +5,10 @@ import { Form, Formik } from "formik";
 import Link from "next/link";
 import LnField from "src/app/components/input/LnField";
 import * as Yup from "yup";
-import { createUserAction } from "src/app/api/actions/User/createUserAction";
 import handleClientAction from "src/app/utils/helpers/handleClientAction";
 import { DatePicker } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import { createUserAction } from "src/app/api/actions/user/createUserAction";
 
 export default function SignUp() {
   const router = useRouter();
