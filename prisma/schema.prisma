@@ -15,17 +15,18 @@ datasource db {
 }
 
 model User {
-  id             String         @id @default(cuid())
+  id             String          @id @default(cuid())
   name           String
-  email          String         @unique
+  email          String          @unique
   password       String
   birth_date     DateTime
-  experience     Int            @default(0)
-  coins          Int            @default(0)
-  is_admin       Boolean        @default(false)
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
+  experience     Int             @default(0)
+  coins          Int             @default(0)
+  is_admin       Boolean         @default(false)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
   activitiesDone ActivityDone[]
+  UserInventory  UserInventory[]
 
   @@map("users")
 }
@@ -40,4 +41,16 @@ model ActivityDone {
   updatedAt   DateTime @updatedAt
 
   @@map("activities_done")
+}
+
+model UserInventory {
+  id        String   @id @default(cuid())
+  user_id   String
+  user      User     @relation(fields: [user_id], references: [id])
+  item_type String
+  item_id   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("user_inventory")
 }

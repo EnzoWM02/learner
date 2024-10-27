@@ -7,7 +7,6 @@ import prisma from "src/app/utils/prisma";
 import calculateLevelService from "src/app/utils/services/User/calculateLevelService";
 
 export async function getUserRankingAction(periodicity) {
-  console.log("fetching", periodicity);
   try {
     if (
       periodicity === RankingPeriodicity.DAILY ||
