@@ -5,6 +5,7 @@ import handleServerError from "src/app/utils/helpers/handleServerError";
 import userDataActionSchema from "src/app/api/schemas/User/userDataActionSchema";
 import userDataSchema from "src/app/api/schemas/User/userDataSchema";
 import calculateLevelService from "src/app/utils/services/User/calculateLevelService";
+import findTitleService from "src/app/utils/services/User/findTitleService";
 
 export async function getUserDataAction(user_id) {
   try {
@@ -18,9 +19,26 @@ export async function getUserDataAction(user_id) {
       },
     });
 
+    const title = await prisma.userInventory.findFirst({
+      where: {
+        user_id: user.id,
+        item_type: "title",
+        equipped: true,
+      },
+    });
+
+    console.log("title", title.item_id);
+    console.log("service", findTitleService(title));
+    console.log("schema", userDataSchema.parse({
+      ...user,
+      level: calculateLevelService(user),
+      title: findTitleService(title),
+    }));
+
     return userDataSchema.parse({
       ...user,
       level: calculateLevelService(user),
+      title: findTitleService(title),
     });
   } catch (e) {
     return handleServerError(e);

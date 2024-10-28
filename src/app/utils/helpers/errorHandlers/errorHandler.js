@@ -15,5 +15,5 @@ export default function errorHandler(error) {
     return error.message;
   }
 
-  return error;
+  return error.errors ?? error;
 }

@@ -49,7 +49,7 @@ export default function SignUp() {
             const res = await handleClientAction(
               createUserAction(submitValues),
               "Criando conta"
-            ); 
+            );
 
             if (!res.error) {
               router.push("/sign-in");
@@ -80,10 +80,7 @@ export default function SignUp() {
                     />
                   </div>
                   <div className="grid grid-cols-2 w-full items-center justify-center">
-                    <Link
-                      href="/sign-in"
-                      className="font-bold text-center"
-                    >
+                    <Link href="/sign-in" className="font-bold text-center">
                       Voltar
                     </Link>
                     <Button color="default" size="lg" type="submit">

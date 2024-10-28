@@ -7,6 +7,7 @@ import {
   FaUserGroup,
   FaDollarSign,
 } from "react-icons/fa6";
+import TitleItem from "src/app/components/modules/store/TitleItem";
 import Icon from "src/app/components/ui/Icon";
 import AvatarButton from "src/app/components/ui/navbar/AvatarButton";
 import NavbarIcon from "src/app/components/ui/navbar/NavbarIcon";
@@ -49,8 +50,9 @@ export default function Navbar() {
           <div className="w-[64px] h-[64px] mb-2">
             <AvatarButton />
           </div>
-          <div className="flex flex-col mb-2">
+          <div className="flex flex-col mb-2 text-center">
             <span>{user.name}</span>
+            <TitleItem title={user.title} />
             <span>Nível {user.level}</span>
           </div>
           <span className="flex justify-center items-center">

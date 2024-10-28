@@ -5,6 +5,7 @@ export default function handleClientError(error) {
   const toastOptions = {
     autoClose: false,
     closeOnClick: true,
+    theme: "dark",
   };
 
   return spanToast("error", errorHandler(error), toastOptions);

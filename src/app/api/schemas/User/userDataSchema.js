@@ -8,4 +8,13 @@ export default z.object({
   level: z.number(),
   coins: z.number(),
   is_admin: z.boolean(),
+  title: z
+    .object({
+      id: z.string(),
+      title: z.string(),
+      color: z.string(),
+      effect: z.string(),
+      price: z.number(),
+    })
+    .nullish(),
 });

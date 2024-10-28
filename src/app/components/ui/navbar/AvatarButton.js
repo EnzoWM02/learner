@@ -14,6 +14,7 @@ import { useUserStore } from "src/stores/userStore";
 
 export default function AvatarButton() {
   const user = useUserStore((state) => state.user);
+  console.log("usr", user);
 
   return (
     <Dropdown
@@ -41,7 +42,14 @@ export default function AvatarButton() {
             </div>
           </DropdownItem>
           <DropdownItem key="profile">Meu perfil</DropdownItem>D
-          <DropdownItem key="about" href="https://enzomosman.com" target="_blank">Sobre</DropdownItem>D
+          <DropdownItem
+            key="about"
+            href="https://enzomosman.com"
+            target="_blank"
+          >
+            Sobre
+          </DropdownItem>
+          D
         </DropdownSection>
         <DropdownSection>
           <DropdownItem

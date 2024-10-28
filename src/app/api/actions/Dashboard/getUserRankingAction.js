@@ -5,6 +5,7 @@ import { RankingPeriodicity } from "src/app/utils/constants/modules/dashboard/Da
 import handleServerError from "src/app/utils/helpers/handleServerError";
 import prisma from "src/app/utils/prisma";
 import calculateLevelService from "src/app/utils/services/User/calculateLevelService";
+import findTitleService from "src/app/utils/services/User/findTitleService";
 
 export async function getUserRankingAction(periodicity) {
   try {

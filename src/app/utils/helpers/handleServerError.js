@@ -11,7 +11,7 @@ export default async function handleServerError(error) {
         message: err.message,
       };
     });
-
+    
     return {
       error: {
         type: ErrorCodes.ZOD,

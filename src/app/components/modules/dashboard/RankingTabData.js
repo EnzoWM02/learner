@@ -2,6 +2,7 @@
 
 import { Card, CardBody } from "@nextui-org/react";
 import { use } from "react";
+import TitleItem from "src/app/components/modules/store/TitleItem";
 
 export default function RankingTabData({ getUserRankingPromise }) {
   const usersRanking = use(getUserRankingPromise);
