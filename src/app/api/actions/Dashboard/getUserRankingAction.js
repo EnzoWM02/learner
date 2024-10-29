@@ -79,7 +79,6 @@ export async function getUserRankingAction(periodicity) {
       });
 
       return topUsers.map((user) => {
-        console.log(user.UserInventory);
         return {
           name: user.name,
           data: calculateLevelService(user),

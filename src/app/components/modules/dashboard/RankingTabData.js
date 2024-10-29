@@ -6,7 +6,6 @@ import TitleItem from "src/app/components/modules/store/TitleItem";
 
 export default function RankingTabData({ getUserRankingPromise }) {
   const usersRanking = use(getUserRankingPromise);
-  console.log("usersRanking", usersRanking);
 
   return (
     <div className="flex flex-col gap-1">

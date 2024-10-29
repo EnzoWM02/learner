@@ -10,6 +10,5 @@ export const spanToast = (type = "info", message, options) => {
     </div>
   );
 
-  console.log("res", message);
   toast[type](<Msg />, options);
 };
