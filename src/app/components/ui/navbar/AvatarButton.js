@@ -54,18 +54,19 @@ export default function AvatarButton() {
         </DropdownSection>
         {!sm && (
           <DropdownSection showDivider>
-            <DropdownItem>
+            <DropdownItem isReadOnly>
+              <div className="flex flex-col mb-2">
+                <span>{user.name}</span>
+                <TitleItem className="text-xs" title={user.title} />
+              </div>
               <div className="flex gap-2">
                 <span>Nível {user.level}</span>
-                <span>
-                  -
-                </span>
+                <span>-</span>
                 <span className="flex items-center">
                   <Icon icon={FaDollarSign} color="white" size="14px" />
                   <span className="leading-[1px]">{user.coins}</span>
                 </span>
               </div>
-              <TitleItem title={user.title} />
             </DropdownItem>
           </DropdownSection>
         )}
