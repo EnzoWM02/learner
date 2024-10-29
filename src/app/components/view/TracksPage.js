@@ -29,12 +29,7 @@ export default function TracksPage({ userTracksCountActionPromise }) {
               key={index}
               onClick={() => router.push(`/activities/${activity.id}`)}
             >
-              <Image
-                src={activity.icon}
-                alt={activity.title}
-                width={50}
-                height={50}
-              />
+              <Image src={activity.icon} alt={activity.title} height={60} />
               <div className="w-full">
                 <div className="flex justify-between">
                   <span className="text-lg">{activity.title}</span>

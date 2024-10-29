@@ -15,7 +15,7 @@ export default function ExperienceBar() {
     <div className="fixed top-0 left-0 w-full h-[5px] bg-gray-950">
       <Tooltip
         showArrow
-        content={`${actualLevelExperience}/${nextLevelRequiredExperience}`}
+        content={`${actualLevelExperience ?? 0}/${nextLevelRequiredExperience ?? 0}`}
         color="foreground"
       >
         <Progress
