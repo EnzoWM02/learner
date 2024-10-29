@@ -8,7 +8,9 @@ export default function BaseLayout({ children }) {
     <div className="h-screen w-screen bg-primary-950 overflow-y-auto">
       <ExperienceBar />
       <Navbar />
-      <div className="pl-[160px] py-10 pr-10">{children}</div>
+      <div className="px-5 sm:pl-[160px] pt-10 pb-[100px] sm:py-10 sm:pr-10">
+        {children}
+      </div>
     </div>
   );
 }

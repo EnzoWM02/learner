@@ -24,7 +24,7 @@ export default function Dashboard() {
           "Bem-vindo ao Learner! Esta é uma plataforma experimental para a validação dos conceitos de gamificação. Qualquer feedback por favor encaminhe para enzowmosman@gmail.com, obrigado!"
         }
       />
-      <div className="grid grid-cols-2 gap-5">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 gap-5">
         <ActivitiesToDo getUserTracksCountPromise={getUserTracksCountPromise} />
         <Ranking
           getUserRankingPromiseDaily={getUserRankingDailyPromise}

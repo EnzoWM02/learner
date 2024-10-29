@@ -7,12 +7,15 @@ import {
   DropdownSection,
   DropdownTrigger,
 } from "@nextui-org/react";
-import { FaDoorOpen } from "react-icons/fa6";
+import { FaDollarSign, FaDoorOpen } from "react-icons/fa6";
+import TitleItem from "src/app/components/modules/store/TitleItem";
 import Icon from "src/app/components/ui/Icon";
 import UserAvatar from "src/app/components/ui/UserAvatar";
+import useBreakpoint from "src/app/hooks/useBreakpoints";
 import { useUserStore } from "src/stores/userStore";
 
 export default function AvatarButton() {
+  const { sm } = useBreakpoint();
   const user = useUserStore((state) => state.user);
 
   return (
@@ -25,14 +28,14 @@ export default function AvatarButton() {
         <UserAvatar
           isBordered
           as="button"
-          className="transition-transform w-[64px] h-[64px]"
+          className="transition-transform w-[48px] h-[48px] sm:w-[64px] sm:h-[64px]"
         />
       </DropdownTrigger>
       <DropdownMenu aria-label="Ações do perfil" variant="flat">
         <DropdownSection showDivider>
           <DropdownItem
             key="user"
-            className="h-14 gap-2 cursor-default"
+            className="sm:h-14 gap-2 cursor-default"
             isReadOnly
           >
             <div className="flex flex-col">
@@ -48,8 +51,24 @@ export default function AvatarButton() {
           >
             Sobre
           </DropdownItem>
-          D
         </DropdownSection>
+        {!sm && (
+          <DropdownSection showDivider>
+            <DropdownItem>
+              <div className="flex gap-2">
+                <span>Nível {user.level}</span>
+                <span>
+                  -
+                </span>
+                <span className="flex items-center">
+                  <Icon icon={FaDollarSign} color="white" size="14px" />
+                  <span className="leading-[1px]">{user.coins}</span>
+                </span>
+              </div>
+              <TitleItem title={user.title} />
+            </DropdownItem>
+          </DropdownSection>
+        )}
         <DropdownSection>
           <DropdownItem
             key="log-out"

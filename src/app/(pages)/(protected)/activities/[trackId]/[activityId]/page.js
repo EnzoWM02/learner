@@ -43,7 +43,7 @@ export default function Activity({ params }) {
       <span className="text-white text-2xl">{activity.title}</span>
       <span className="text-gray-300 text-sm pt-2">{activity.description}</span>
       <div className="w-full flex items-center justify-center mt-10">
-        <Container className="w-4/5">
+        <Container className="sm:w-4/5">
           <div className="mb-4">
             <span className="text-white text-xl">
               {activity.questions.title}

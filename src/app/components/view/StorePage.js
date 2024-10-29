@@ -90,9 +90,9 @@ export default function StorePage({ getUserInventoryItemsPromise }) {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="flex flex-col sm:grid sm:grid-cols-2 gap-5 sm:gap-10">
       <Container
-        className={"flex flex-col gap-5 max-h-[75vh] h-fit overflow-y-auto"}
+        className={"flex flex-col gap-5 sm:max-h-[75vh] h-fit overflow-y-auto"}
       >
         <span className="text-lg text-center text-white font-bold">
           Inventário
@@ -115,7 +115,7 @@ export default function StorePage({ getUserInventoryItemsPromise }) {
         )}
       </Container>
       <Container
-        className={"flex flex-col gap-5 max-h-[75vh] h-fit overflow-y-auto"}
+        className={"flex flex-col gap-5 sm:max-h-[75vh] h-fit overflow-y-auto"}
       >
         <span className="text-lg text-center text-white font-bold">Loja</span>
         <hr className="w-full h-1" />
