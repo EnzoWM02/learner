@@ -14,7 +14,6 @@ import { useUserStore } from "src/stores/userStore";
 
 export default function AvatarButton() {
   const user = useUserStore((state) => state.user);
-  console.log("usr", user);
 
   return (
     <Dropdown

@@ -27,14 +27,6 @@ export async function getUserDataAction(user_id) {
       },
     });
 
-    console.log("title", title.item_id);
-    console.log("service", findTitleService(title));
-    console.log("schema", userDataSchema.parse({
-      ...user,
-      level: calculateLevelService(user),
-      title: findTitleService(title),
-    }));
-
     return userDataSchema.parse({
       ...user,
       level: calculateLevelService(user),

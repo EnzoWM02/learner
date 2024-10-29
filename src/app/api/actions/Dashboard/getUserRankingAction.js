@@ -25,6 +25,15 @@ export async function getUserRankingAction(periodicity) {
       const topUsersActivities = await prisma.user.findMany({
         select: {
           name: true,
+          UserInventory: {
+            where: {
+              item_type: "title",
+              equipped: true,
+            },
+            select: {
+              item_id: true,
+            },
+          },
           _count: {
             select: {
               activitiesDone: {
@@ -43,6 +52,7 @@ export async function getUserRankingAction(periodicity) {
         return {
           name: user.name,
           data: user._count.activitiesDone,
+          title: findTitleService(user.UserInventory[0]),
         };
       });
     }
@@ -56,13 +66,24 @@ export async function getUserRankingAction(periodicity) {
         select: {
           name: true,
           experience: true,
+          UserInventory: {
+            where: {
+              item_type: "title",
+              equipped: true,
+            },
+            select: {
+              item_id: true,
+            },
+          },
         },
       });
 
       return topUsers.map((user) => {
+        console.log(user.UserInventory);
         return {
           name: user.name,
           data: calculateLevelService(user),
+          title: findTitleService(user.UserInventory[0]),
         };
       });
     }

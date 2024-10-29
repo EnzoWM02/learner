@@ -6,6 +6,7 @@ import TitleItem from "src/app/components/modules/store/TitleItem";
 
 export default function RankingTabData({ getUserRankingPromise }) {
   const usersRanking = use(getUserRankingPromise);
+  console.log("usersRanking", usersRanking);
 
   return (
     <div className="flex flex-col gap-1">
@@ -21,7 +22,10 @@ export default function RankingTabData({ getUserRankingPromise }) {
       )}
       {usersRanking.map((user, index) => (
         <div key={index} className="flex justify-between">
-          <span>{user.name}</span>
+          <div className="flex flex-col">
+            <span>{user.name}</span>
+            <TitleItem className="text-xs" title={user.title} />
+          </div>
           <span>{user.data}</span>
         </div>
       ))}

@@ -1,8 +1,11 @@
-export default function TitleItem({ title }) {
+export default function TitleItem({ title, className }) {
   return (
     <>
       {title && (
-        <span className="text-lgfont-bold" style={{ color: title.color }}>
+        <span
+          className={`${className} text-lgfont-bold`}
+          style={{ color: title.color }}
+        >
           {title.title}
         </span>
       )}
