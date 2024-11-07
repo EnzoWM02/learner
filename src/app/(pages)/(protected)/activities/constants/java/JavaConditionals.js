@@ -13,9 +13,9 @@ const JavaConditionals = {
     title:
       "Qual operador de comparação verifica se dois valores são iguais em Java?",
     options: [
-      { title: "==", correct: true },
       { title: "!=", correct: false },
       { title: "=", correct: false },
+      { title: "==", correct: true },
       { title: "&&", correct: false },
     ],
   },

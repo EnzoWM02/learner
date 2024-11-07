@@ -12,8 +12,8 @@ const JavaDataTypes = {
   questions: {
     title: "Qual tipo de dado é usado para armazenar números inteiros em Java?",
     options: [
-      { title: "int", correct: true },
       { title: "double", correct: false },
+      { title: "int", correct: true },
       { title: "boolean", correct: false },
       { title: "String", correct: false },
     ],

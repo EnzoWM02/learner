@@ -13,16 +13,16 @@ const JavascriptAbout = {
     title: "O que é javascript?",
     options: [
       {
-        title: "Linguagem de programação de alto nível",
-        correct: true,
-      },
-      {
         title: "Linguagem de programação de baixo nível",
         correct: false,
       },
       {
         title: "Linguagem de programação de médio nível",
         correct: false,
+      },
+      {
+        title: "Linguagem de programação de alto nível",
+        correct: true,
       },
       {
         title: "Linguagem de programação de nível intermediário",

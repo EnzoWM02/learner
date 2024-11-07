@@ -13,8 +13,8 @@ const JavascriptScopes = {
     title:
       "Qual é o escopo de uma variável declarada com `let` dentro de um bloco `{}`?",
     options: [
-      { title: "Escopo de bloco", correct: true },
       { title: "Escopo global", correct: false },
+      { title: "Escopo de bloco", correct: true },
       { title: "Escopo de função", correct: false },
       { title: "Escopo lexical", correct: false },
     ],

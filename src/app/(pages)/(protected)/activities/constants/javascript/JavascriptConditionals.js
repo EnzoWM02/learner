@@ -13,8 +13,8 @@ const JavascriptConditionals = {
     title:
       "Qual operador de comparação verifica se dois valores são iguais em valor e tipo?",
     options: [
-      { title: "===", correct: true },
       { title: "==", correct: false },
+      { title: "===", correct: true },
       { title: "!=", correct: false },
       { title: ">=", correct: false },
     ],

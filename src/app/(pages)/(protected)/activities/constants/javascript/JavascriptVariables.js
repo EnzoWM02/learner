@@ -13,10 +13,10 @@ const JavascriptVariables = {
     title:
       "Qual é a palavra-chave para declarar uma variável que não pode ser reatribuída?",
     options: [
-      { title: "const", correct: true },
       { title: "let", correct: false },
       { title: "var", correct: false },
       { title: "function", correct: false },
+      { title: "const", correct: true },
     ],
   },
 };

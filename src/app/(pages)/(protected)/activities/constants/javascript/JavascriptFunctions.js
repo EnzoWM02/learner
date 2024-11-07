@@ -12,10 +12,10 @@ const JavascriptFunctions = {
   questions: {
     title: "Qual das opções cria uma função chamada `soma`?",
     options: [
-      { title: "`function soma() {}`", correct: true },
       { title: "`soma() => {}`", correct: false },
       { title: "`let soma = function`", correct: false },
       { title: "`const soma() => {}`", correct: false },
+      { title: "`function soma() {}`", correct: true },
     ],
   },
 };

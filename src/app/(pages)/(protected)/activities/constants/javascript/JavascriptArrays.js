@@ -12,10 +12,10 @@ const JavascriptArrays = {
   questions: {
     title: "Qual método adiciona um elemento ao final de um array?",
     options: [
-      { title: "push", correct: true },
       { title: "pop", correct: false },
       { title: "shift", correct: false },
       { title: "unshift", correct: false },
+      { title: "push", correct: true },
     ],
   },
 };
