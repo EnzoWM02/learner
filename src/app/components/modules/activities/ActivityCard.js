@@ -2,8 +2,9 @@
 
 import { Chip } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import { FaCircleCheck } from "react-icons/fa6";
+import { FaCircleCheck, FaDollarSign, FaRegCircleUp } from "react-icons/fa6";
 import Container from "src/app/components/ui/Container";
+import Icon from "src/app/components/ui/Icon";
 import NewChip from "src/app/components/ui/NewChip";
 
 export default function ActivityCard({
@@ -16,10 +17,21 @@ export default function ActivityCard({
 
   return (
     <Container
-      className={`${className} flex flex-col gap-4 transition hover:bg-primary-600 hover:border-primary-700 cursor-pointer items-center justify-center`}
+      className={`${className} relative flex flex-col gap-4 transition hover:bg-primary-600 hover:border-primary-700 cursor-pointer items-center justify-center`}
       onClick={() => router.push(`/activities/${trackId}/${activity.id}`)}
     >
       <span className="text-lg">{activity.title}</span>
+      <div className="flex gap-2">
+        <div className="flex items-center">
+          <Icon icon={FaDollarSign} color="white" size="14px" />
+          <span className="leading-[1px]">{activity.coins}</span>
+        </div>
+        <span className="text-white leading-[14px]">•</span>
+        <div className="flex items-center gap-1">
+          <Icon icon={FaRegCircleUp} color="white" size="14px" />
+          <span className="leading-[1px]">{activity.experience}</span>
+        </div>
+      </div>
       <div className="flex gap-2 from-yell">
         {activity.new && <NewChip size="sm" />}
         {isDone && (
