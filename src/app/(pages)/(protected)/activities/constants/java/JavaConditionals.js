@@ -7,7 +7,6 @@ const JavaConditionals = {
   experience: 120,
   title: "Condicionais",
   difficulty: Difficulties.MEDIUM,
-  new: true,
   description:
     "Condicionais em Java permitem que o código tome decisões com base em condições específicas. As principais estruturas são `if`, `else if` e `else`.",
   type: ActivitiesType.singleChoice,

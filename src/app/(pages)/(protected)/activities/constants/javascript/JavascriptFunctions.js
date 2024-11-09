@@ -7,7 +7,6 @@ const JavascriptFunctions = {
   experience: 150,
   title: "Funções",
   difficulty: Difficulties.MEDIUM,
-  new: true,
   description:
     "Funções em JavaScript são blocos de código que executam tarefas específicas e podem ser reutilizadas em diversas partes do código.",
   type: ActivitiesType.singleChoice,

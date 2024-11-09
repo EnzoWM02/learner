@@ -7,7 +7,6 @@ const JavaDataTypes = {
   experience: 100,
   title: "Tipos de dados",
   difficulty: Difficulties.EASY,
-  new: true,
   description:
     "Java possui vários tipos de dados primitivos, como `int`, `double`, `boolean`, entre outros, que permitem armazenar diferentes tipos de valores.",
   type: ActivitiesType.singleChoice,

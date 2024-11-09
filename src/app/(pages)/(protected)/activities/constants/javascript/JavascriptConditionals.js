@@ -7,7 +7,6 @@ const JavascriptConditionals = {
   experience: 120,
   difficulty: Difficulties.MEDIUM,
   title: "Condicionais",
-  new: true,
   description:
     "Condicionais em JavaScript permitem executar blocos de código com base em condições. As estruturas mais comuns são `if`, `else if` e `else`.",
   type: ActivitiesType.singleChoice,

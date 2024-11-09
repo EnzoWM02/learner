@@ -7,7 +7,6 @@ const JavascriptVariables = {
   experience: 100,
   title: "Variáveis",
   difficulty: Difficulties.EASY,
-  new: true,
   description:
     "Variáveis em JavaScript são utilizadas para armazenar dados que podem ser acessados e manipulados ao longo do programa. Elas são declaradas com `var`, `let` ou `const`.",
   type: ActivitiesType.singleChoice,

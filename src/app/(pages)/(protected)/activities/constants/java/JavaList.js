@@ -1,12 +1,26 @@
+import JavaArrayList from "src/app/(pages)/(protected)/activities/constants/java/JavaArrayList";
 import JavaConditionals from "src/app/(pages)/(protected)/activities/constants/java/JavaConditionals";
 import JavaDataTypes from "src/app/(pages)/(protected)/activities/constants/java/JavaDataTypes";
+import JavaInheritance from "src/app/(pages)/(protected)/activities/constants/java/JavaInheritance";
 import JavaLoops from "src/app/(pages)/(protected)/activities/constants/java/JavaLoops";
+import JavaOperators from "src/app/(pages)/(protected)/activities/constants/java/JavaOperators";
+import JavaPolymorphism from "src/app/(pages)/(protected)/activities/constants/java/JavaPolymorphism";
+import JavaStrings from "src/app/(pages)/(protected)/activities/constants/java/JavaStrings";
 import JavaIcon from "src/app/assets/images/modules/activities/JavaIcon.png";
 
 const JavaList = {
   id: "java",
   title: "Java",
-  list: [{ ...JavaDataTypes }, { ...JavaConditionals }, { ...JavaLoops }],
+  list: [
+    { ...JavaDataTypes },
+    { ...JavaOperators },
+    { ...JavaStrings },
+    { ...JavaConditionals },
+    { ...JavaInheritance },
+    { ...JavaArrayList },
+    { ...JavaLoops },
+    { ...JavaPolymorphism },
+  ],
   icon: JavaIcon,
   links: [
     {

@@ -7,7 +7,6 @@ const JavascriptScopes = {
   experience: 200,
   title: "Escopos",
   difficulty: Difficulties.HARD,
-  new: true,
   description:
     "O escopo em JavaScript define a visibilidade e a acessibilidade das variáveis. Os principais tipos de escopo são o escopo global, de função e de bloco.",
   type: ActivitiesType.singleChoice,

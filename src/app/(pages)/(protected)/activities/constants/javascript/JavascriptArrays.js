@@ -3,11 +3,10 @@ import Difficulties from "src/app/(pages)/(protected)/activities/constants/Diffi
 
 const JavascriptArrays = {
   id: "js-arrays",
-  coins: 25,
-  experience: 200,
+  coins: 15,
+  experience: 150,
   title: "Arrays",
-  difficulty: Difficulties.HARD,
-  new: true,
+  difficulty: Difficulties.MEDIUM,
   description:
     "Arrays em JavaScript são usados para armazenar múltiplos valores em uma única variável, permitindo acesso e manipulação com diversos métodos.",
   type: ActivitiesType.singleChoice,
