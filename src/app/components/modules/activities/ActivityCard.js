@@ -33,7 +33,17 @@ export default function ActivityCard({
         </div>
       </div>
       <div className="flex gap-2 from-yell">
-        {activity.new && <NewChip size="sm" />}
+        <Chip
+          classNames={{
+            base: "border-small border-white/50",
+            content: "drop-shadow shadow-black text-white",
+          }}
+          size="sm"
+          color={activity.difficulty.color}
+        >
+          {activity.difficulty.label}
+        </Chip>
+        {activity.new && <NewChip size="sm" />} 
         {isDone && (
           <Chip
             size="sm"

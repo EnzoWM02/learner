@@ -48,7 +48,7 @@ export default function AvatarButton() {
             href="https://enzomosman.com"
             target="_blank"
           >
-            Sobre
+            Sobre nós
           </DropdownItem>
         </DropdownSection>
         {!sm && (

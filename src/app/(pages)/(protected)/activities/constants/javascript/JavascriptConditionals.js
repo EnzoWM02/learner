@@ -1,9 +1,11 @@
 import ActivitiesType from "src/app/(pages)/(protected)/activities/constants/ActivitiesType";
+import Difficulties from "src/app/(pages)/(protected)/activities/constants/Difficulties";
 
 const JavascriptConditionals = {
   id: "js-conditionals",
   coins: 15,
   experience: 120,
+  difficulty: Difficulties.MEDIUM,
   title: "Condicionais",
   new: true,
   description:

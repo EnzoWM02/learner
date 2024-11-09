@@ -18,6 +18,8 @@ import { buyStoreItemAction } from "src/app/api/actions/Store/buyStoreItemAction
 import { useUserStore } from "src/stores/userStore";
 import { useRouter } from "next/navigation";
 import { equipItemAction } from "src/app/api/actions/Store/equipItemAction";
+import Icon from "src/app/components/ui/Icon";
+import { FaCheck } from "react-icons/fa6";
 
 export default function StorePage({ getUserInventoryItemsPromise }) {
   const router = useRouter();
@@ -41,7 +43,14 @@ export default function StorePage({ getUserInventoryItemsPromise }) {
 
   const inventoryTitles = TitleList.filter((title) => {
     return userInventoryItems.find((item) => item.item_id === title.id);
+  }).map((title) => {
+    return {
+      ...title,
+      equipped: userInventoryItems.find((item) => item.item_id === title.id)
+        .equipped,
+    };
   });
+  console.log(inventoryTitles);
 
   const filteredStoreTitles = TitleList.filter((title) => {
     return !userInventoryItems.find((item) => item.item_id === title.id);
@@ -109,6 +118,7 @@ export default function StorePage({ getUserInventoryItemsPromise }) {
                 onClick={() => onClickTitleEquip(title)}
               >
                 <TitleItem title={title} />
+                {title.equipped && <Icon className="mr-2" size="16px" icon={FaCheck} />}
               </div>
             ))}
           </div>

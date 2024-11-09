@@ -13,13 +13,22 @@ export default function Ranking({
     <Container>
       <Tabs fullWidth aria-label="Options" color="primary">
         <Tab key="daily" title="Diario">
-          <RankingTab getUserRankingPromise={getUserRankingPromiseDaily} />
+          <RankingTab
+            getUserRankingPromise={getUserRankingPromiseDaily}
+            message="Ranquemento diário de atividades realizadas"
+          />
         </Tab>
         <Tab key="monthly" title="Mensal">
-          <RankingTab getUserRankingPromise={getUserRankingPromiseMonthly} />
+          <RankingTab
+            getUserRankingPromise={getUserRankingPromiseMonthly}
+            message="Ranquemento mensal de atividades realizadas"
+          />
         </Tab>
         <Tab key="all" title="Nível">
-          <RankingTab getUserRankingPromise={getUserRankingPromiseLevel} />
+          <RankingTab
+            getUserRankingPromise={getUserRankingPromiseLevel}
+            message="Ranquemento por nível"
+          />
         </Tab>
       </Tabs>
     </Container>

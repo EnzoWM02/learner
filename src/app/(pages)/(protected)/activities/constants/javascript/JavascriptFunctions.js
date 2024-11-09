@@ -1,10 +1,12 @@
 import ActivitiesType from "src/app/(pages)/(protected)/activities/constants/ActivitiesType";
+import Difficulties from "src/app/(pages)/(protected)/activities/constants/Difficulties";
 
 const JavascriptFunctions = {
   id: "js-functions",
   coins: 15,
   experience: 150,
   title: "Funções",
+  difficulty: Difficulties.MEDIUM,
   new: true,
   description:
     "Funções em JavaScript são blocos de código que executam tarefas específicas e podem ser reutilizadas em diversas partes do código.",

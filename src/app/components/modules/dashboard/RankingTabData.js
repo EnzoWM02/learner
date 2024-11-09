@@ -2,9 +2,11 @@
 
 import { Card, CardBody } from "@nextui-org/react";
 import { use } from "react";
+import { FaCircleInfo } from "react-icons/fa6";
 import TitleItem from "src/app/components/modules/store/TitleItem";
+import Icon from "src/app/components/ui/Icon";
 
-export default function RankingTabData({ getUserRankingPromise }) {
+export default function RankingTabData({ getUserRankingPromise, message }) {
   const usersRanking = use(getUserRankingPromise);
 
   return (
@@ -16,6 +18,20 @@ export default function RankingTabData({ getUserRankingPromise }) {
               Nenhum dado foi encontrado para esse ranking... Complete
               atividades e seja o primeiro!
             </span>
+          </CardBody>
+        </Card>
+      )}
+      {usersRanking.length > 0 && (
+        <Card
+          classNames={{
+            base: ["bg-primary-100 mb-6"],
+          }}
+        >
+          <CardBody>
+            <div className="flex gap-4">
+              <Icon icon={FaCircleInfo} size={20} />
+              <span className="text-sm">{message}</span>
+            </div>
           </CardBody>
         </Card>
       )}

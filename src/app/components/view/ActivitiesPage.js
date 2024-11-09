@@ -68,7 +68,10 @@ export default function ActivitiesPage({
           </div>
         </CardBody>
       </Card>
-      <div className=" mt-6 grid grid-cols-1 sm:grid-cols-5 gap-4">
+      <div
+        className="mt-6 grid gap-4"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))" }}
+      >
         {currentActivityList.list.map((activity, index) => {
           return (
             <div key={index}>

@@ -1,10 +1,12 @@
 import ActivitiesType from "src/app/(pages)/(protected)/activities/constants/ActivitiesType";
+import Difficulties from "src/app/(pages)/(protected)/activities/constants/Difficulties";
 
 const JavascriptVariables = {
   id: "js-variables",
   coins: 10,
   experience: 100,
   title: "Variáveis",
+  difficulty: Difficulties.EASY,
   new: true,
   description:
     "Variáveis em JavaScript são utilizadas para armazenar dados que podem ser acessados e manipulados ao longo do programa. Elas são declaradas com `var`, `let` ou `const`.",
