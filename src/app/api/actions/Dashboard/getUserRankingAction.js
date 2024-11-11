@@ -23,11 +23,6 @@ export async function getUserRankingAction(periodicity) {
           : endOfMonth(new Date());
 
       const topUsersActivities = await prisma.user.findMany({
-        orderBy: {
-          activitiesDone: {
-            _count: "desc",
-          },
-        },
         take: 10,
         select: {
           name: true,
